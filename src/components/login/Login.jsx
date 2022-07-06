@@ -1,7 +1,8 @@
 import React from 'react';
 import { InputText } from 'primereact/inputtext';
-import './Login.scss';
 import { useState } from 'react';
+import { Button } from 'primereact/button';
+import './Login.scss';
 
 const INITIAL_VALUE = {
     username: '',
@@ -15,12 +16,11 @@ const Login = () => {
     const handleLoginInput = ev =>{
         const {name, value} = ev.target;
         setLoginData({...loginData, [name]: value});
-        console.log(loginData);
-    }
+    };
     const submitLoginForm = ev =>{
         ev.preventDefault();
-        console.log('Submited!');
-    }
+        console.log(loginData);
+    };
     return (
         <section className='postealo__login'>
             <form onSubmit={submitLoginForm}>
@@ -37,11 +37,14 @@ const Login = () => {
                     </span>
                 </div>
                 <div className='postealo__login-btn'>
-                    
+                    <Button label="Iniciar sesión" className="p-button-raised p-button-primary" />
+                </div>
+                <div className='postealo__login-passremember'>
+                    <a href='#'>He olvidado mi contraseña</a>
                 </div>
             </form>
         </section>
     )
 }
 
-export default Login
+export default Login;
