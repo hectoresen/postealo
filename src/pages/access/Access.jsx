@@ -24,7 +24,7 @@ const Access = () => {
                     <div className='postealo__access__forms-register'>
                         <Register />
                         <div className='postealo__access__forms-register-back'>
-                            <a href='#' onClick={() =>setRegisterActive(false)}>Ir a inicio de sesión</a>
+                            <p>Volver a<a href='#' onClick={() =>setRegisterActive(false)}> inicio de sesión</a></p>
                         </div>
                     </div>
                 )}

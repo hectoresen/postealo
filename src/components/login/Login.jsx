@@ -39,10 +39,10 @@ const Login = () => {
                 <div className='postealo__login-btn'>
                     <Button label="Iniciar sesión" className="p-button-raised p-button-primary" />
                 </div>
+            </form>
                 <div className='postealo__login-passremember'>
                     <a href='#'>He olvidado mi contraseña</a>
                 </div>
-            </form>
         </section>
     )
 }
