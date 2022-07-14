@@ -4,6 +4,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    &-form{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      &-imgprofile{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
     &-email{
         margin-top: 10%;
     }
@@ -16,7 +26,6 @@
         border-radius: 5px;
     }
 };
-
 .register-ok{
         display: flex;
         justify-content: center;

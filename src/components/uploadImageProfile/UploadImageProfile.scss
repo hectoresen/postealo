@@ -1,0 +1,39 @@
+.profileimageupload{
+    margin-bottom: 5%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid blue;
+    &__content{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        &-text{
+            margin-top: 5%;
+        }
+        input {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            opacity: 0;
+            cursor: pointer;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        img[src]{
+            display: block;
+        }
+    }
+}
+
