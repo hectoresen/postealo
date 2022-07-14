@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import { registerUser } from '../../redux/actions/auth.actions';
 import './Register.scss';
 import { useEffect } from 'react';
+import UploadImageProfile from '../uploadImageProfile/UploadImageProfile';
 
 const INITIAL_VALUE = {
   name: '',
@@ -53,7 +54,10 @@ const Register = ({dispatch, user, error}) => {
     </div>}
     {!registered &&
     <section className='postealo__register'>
-      <form onSubmit={submitRegisterForm}>
+      <form className="postealo__register-form" onSubmit={submitRegisterForm}>
+        <div className='postealo__register-form-imgprofile'>
+          <UploadImageProfile />
+        </div>
         <div className="postealo__register-username">
           <span className="p-input-icon-left">
               <i className="pi pi-user" />
