@@ -31,10 +31,11 @@ export const registerUser = userData =>{
         });
 
         const registerResult = await registerRequest.json();
+
         if(registerRequest.ok){
             dispatch({type: AUTH_REGISTER_OK, payload: registerResult})
         }else{
-            dispatch({type: AUTH_REGISTER_ERROR, payload: registerRequest.message})
+            dispatch({type: AUTH_REGISTER_ERROR, payload: registerResult.message})
         };
     };
 };

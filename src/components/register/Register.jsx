@@ -14,14 +14,15 @@ const INITIAL_VALUE = {
   password: ''
 };
 
-const Register = ({dispatch, user}) => {
+const Register = ({dispatch, user, error}) => {
   const [registerData, setRegisterData] = useState(INITIAL_VALUE);
   const [registered, setRegistered] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() =>{
-    console.log(user);
-    if(user != null){
+    console.log('Usuario',user);
+    console.log('Error', error);
+    if((user !== null) && (user !== false)){
       setRegistered(true);
     }
   },[user])
@@ -71,6 +72,11 @@ const Register = ({dispatch, user}) => {
               <InputText name='password' value={registerData.password} onChange={handleRegisterInput} type="password" placeholder="Contraseña" />
           </span>
         </div>
+      {error &&
+      <div className='register-errors'>
+        <p>{error}</p>
+      </div>
+      }
         <div className='postealo__login-btn'>
           <Button label="Registrarme" className="p-button-raised p-button-primary" />
         </div>
@@ -82,7 +88,8 @@ const Register = ({dispatch, user}) => {
 };
 
 const mapStateToProps = (state) =>({
-  user: state.auth.user
+  user: state.auth.user,
+  error: state.auth.error
 });
 
 

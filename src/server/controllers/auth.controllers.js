@@ -1,5 +1,4 @@
 const passport = require('passport');
-const User = require('../models/user.model');
 
 module.exports = {
     registerPost: (req, res, next) =>{
@@ -7,8 +6,7 @@ module.exports = {
         console.log(`NAME = ${name}, EMAIL = ${email}, PASSWORD = ${password}`);
 
         if(!password || !email || !name){
-            console.log(1);
-            return res.status(400).json({message: 'Debes completar todos los campos'});
+            return res.status(401).json({ message: 'Debes completar todos los campos' });
         };
 
         passport.authenticate('register', (error, user) =>{
